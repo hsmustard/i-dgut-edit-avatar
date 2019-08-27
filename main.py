@@ -23,7 +23,7 @@ def getCasToken(headers=None):
         raise RuntimeError('获取cas页面的token失败')
     tokenHtml = script[0].text
     tokenStart = tokenHtml.find('var token')
-    cas_token = tokenHtml[tokenStart+13:tokenStart++13+32]
+    cas_token = tokenHtml[tokenStart+13:tokenStart+13+32]
     print('csrf token:', cas_token)
     return cas_token, r.cookies.get_dict()
 
